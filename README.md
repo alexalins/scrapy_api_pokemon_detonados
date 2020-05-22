@@ -8,5 +8,5 @@ scrapy runspider pokemonDetonados/spiders/detonados.py
 
 ## Gerando arquivo .json
 ``` 
-scrapy crawl detonatos -o detonados.json
+scrapy crawl detonados -o detonados.json
 ```
