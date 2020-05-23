@@ -19,7 +19,14 @@ class DetonadosSpider(scrapy.Spider):
             # images
             images = []
             images.append(image1.css('p img::attr(src)').get())
-            images.append(image2.css('p img::attr(src)').get())
+            img2 = image2.css('p img::attr(src)').get()
+            # tinha caso de não vim no p
+            if img2 is not None:
+                images.append(img2)
+            else:
+                #verificando se tem tag img
+                img2 = image2.css('img::attr(src)').get()
+                images.append(img2)
             #
             title = dados.css('p strong span::text').get()
             link = linkCod.css('a::attr(href)').get()
