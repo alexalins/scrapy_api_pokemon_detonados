@@ -10,6 +10,10 @@ class DetonadosSpider(scrapy.Spider):
 
     def parse(self, response):
         for item in response.css('table'):
+            # se for table67 é o inicio de spin-offs
+            if(item.css('table#table67')):
+                break
+
             detonado = item.css('tbody tr')
             # montando dados
             image1 = detonado.css('td')[0]
