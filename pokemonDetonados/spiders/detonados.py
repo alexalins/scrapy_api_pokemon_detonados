@@ -27,8 +27,10 @@ class DetonadosSpider(scrapy.Spider):
                 #verificando se tem tag img
                 img2 = image2.css('img::attr(src)').get()
                 images.append(img2)
-            #
-            title = dados.css('p strong span::text').get()
+            # usando extract pq podem vim textos separados
+            title = dados.css('p strong span::text').extract()
+            # juntando textos em 1 só
+            title = " ".join(title)
             link = linkCod.css('a::attr(href)').get()
             # se não vier o link inteiro
             if link[0] == '/':
