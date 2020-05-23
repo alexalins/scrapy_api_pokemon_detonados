@@ -13,7 +13,7 @@ BOT_NAME = 'pokemonDetonados'
 
 SPIDER_MODULES = ['pokemonDetonados.spiders']
 NEWSPIDER_MODULE = 'pokemonDetonados.spiders'
-
+FEED_EXPORT_ENCODING = 'utf-8'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'pokemonDetonados (+http://www.yourdomain.com)'
