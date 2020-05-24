@@ -2,7 +2,7 @@ from pokemonDetonados.app import app
 from flask import jsonify
 import json
 
-@app.route('/')
+@app.route('/detonado')
 def getDetonados():
     detonados = getJSON('app/../detonados.json')
     return jsonify(detonados)
